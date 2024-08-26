@@ -13,7 +13,7 @@
     |
     */
     $api_controller_path = 'App\Http\Controllers\Api';
-    $admin_controller_path = 'App\Http\Controllers\Admx';
+    $admin_controller_path = 'App\Http\Controllers\Admin';
     $info_controller_path = 'App\Http\Controllers\Info';
     $location_controller_path = 'App\Http\Controllers\Location';
 
@@ -23,14 +23,14 @@
     Route::get('/tester/fcm', $api_controller_path . '\TesterController@fcm');
 
     //관리자 로그인
-    Route::get('/admx', $admin_controller_path . '\LoginController@index');
-    Route::get('/admx/login', $admin_controller_path . '\LoginController@index');
-    Route::post('/admx/login/proc', $admin_controller_path . '\LoginController@proc');
+    Route::get('/admin', $admin_controller_path . '\LoginController@index');
+    Route::get('/admin/login', $admin_controller_path . '\LoginController@index');
+    Route::post('/admin/login/proc', $admin_controller_path . '\LoginController@proc');
 
     Route::middleware(['login'])->group(function() {
 
-        Route::prefix('/admx')->group(function () {
-            $admin_controller_path = 'App\Http\Controllers\Admx';
+        Route::prefix('/admin')->group(function () {
+            $admin_controller_path = 'App\Http\Controllers\Admin';
             
             Route::get('/login/logout', $admin_controller_path . '\LoginController@logout');
             Route::get('/', $admin_controller_path . '\AppInfoController@index');
