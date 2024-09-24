@@ -10,7 +10,7 @@
 ## Component
 
 - INPUT
-```
+```ruby
 <x-form.input
     width="6"
     type="text"
@@ -24,7 +24,7 @@
 ```
 
   - SELECT
-```
+```ruby
 <x-form.select
     width="6"
     name="run_state"
@@ -36,7 +36,7 @@
 ```
 
 - TEXTAREA
-```
+```ruby
 <x-form.textarea
     width="12"
     name="memo"
